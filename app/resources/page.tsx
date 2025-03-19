@@ -1,14 +1,12 @@
-import Breadcrumb from "@/components/Breadcrumb";
+"use client";
+import ResourcesPage from "@/components/ResourcesPage";
 import React from "react";
 
 const Resources = () => {
   return (
-    <div>
-      <div className="breadcrumb flex items-center justify-center">
-        <Breadcrumb />
-      </div>
-      <section className="hero-section"> Resources</section>
-    </div>
+    <>
+      <ResourcesPage />
+    </>
   );
 };
 
