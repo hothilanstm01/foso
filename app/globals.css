@@ -1,42 +1,104 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
+body {
+  background: #F9FBFC;
+  font-size: 14px;
+}
+
+
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: background-color 0.2s ease-in-out;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.container {
+}
+
+.custom-box {
+  background: rgba(255, 255, 255, 0.65);
+  box-shadow: -1px 1px 0px 0px #F0F0F0, 1px -1px 0px 0px #FFF, -8.999px 19.998px 59.993px -23.997px rgba(0, 0, 0, 0.05), 0px 2px 83.99px 0px rgba(0, 0, 0, 0.02) inset;
+  backdrop-filter: blur(12.498550415039062px);
+}
+
+.group:hover .caret-icon {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.bg-gradient-green {
+  background: radial-gradient(100% 100% at 50% 0%, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.00) 100%), #1AD598;
+}
+
+.bg-gradient-grey {
+  border: 1px solid rgba(9, 9, 11, 0.05);
+  background: linear-gradient(0deg, rgba(9, 9, 11, 0.05) 0%, rgba(9, 9, 11, 0.10) 100%);
+}
+
+.bg-gradient-blue {
+  background: linear-gradient(78deg, #013DA0 11.85%, #0142A9 20.65%, #0148B3 29.45%, #024EBC 38.25%, #0254C5 47.05%, #025ACE 55.84%, #0261D7 64.64%, #0267E1 73.44%, #036EEA 82.24%, #0375F3 91.04%)
+}
+
+
+.content {
+  @apply max-w-[90rem] mx-auto px-4 md:px-8 lg:px-16 xl:px-0 pb-[500px];
+}
+
+.text-custom-green {
+  background: linear-gradient(90deg, #53B086 0%, rgba(83, 176, 134, 0.99) 27.5%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Raleway;
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 6.25rem;
+  text-transform: capitalize;
+}
+.text-custom {
+  color: #050505;
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 6.25rem;
+  text-transform: capitalize;
+  position: relative;
+}
+
+.text-custom::after {
+  content: '';
+  z-index: -1;
+  bottom: -5px;
+  left: 0;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 1.75rem;
+  bottom: 3px;
+  border-radius: 2.5rem;
+  background: #A3EED6;
+}
+
+.top-center {
+  top: 50%;
+  transform: translateY(-50%);
 }

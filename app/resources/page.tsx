@@ -1,12 +1,15 @@
 import Breadcrumb from "@/components/Breadcrumb";
+import React from "react";
 
-export default function Home() {
+const Resources = () => {
   return (
     <div>
       <div className="breadcrumb flex items-center justify-center">
         <Breadcrumb />
       </div>
-      <section className="hero-section"> hello</section>
+      <section className="hero-section"> Resources</section>
     </div>
   );
-}
+};
+
+export default Resources;
